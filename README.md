@@ -1,111 +1,115 @@
-# https://airnbapi.onrender.com
+-- Link de repositorio en render: https://airbnb-clavijojuanpablo.onrender.com -- 
 
-/api/v1/users
+# Rutas
 
-/api/v1/users/:id
+- /api/v1/users
+- /api/v1/users/:id
+- /api/v1/users/me
 
-/api/v1/users/me
+- /api/v1/auth/login
+- /api/v1/auth/register
+- /api/v1/auth/password-recovery
+- /api/v1/auth/verify-account
 
-/api/v1/auth/login
+- /api/v1/users
+- - GET 
 
-/api/v1/auth/register
+- /api/v1/users/:id
+- - GET  
+- - PUT (ADMIN)
+- - DELETE (ADMIN)
 
-/api/v1/auth/password-recovery
+- /api/v1/users/me
+- - GET
+- - PUT
+- - PATCH
+- - DELETE
 
-/api/v1/auth/verify-account
+- /api/v1/auth/login
+- - POST
 
-/api/v1/users
+- /api/v1/auth/register
+- - POST
 
-GET
-/api/v1/users/:id
+- /api/v1/auth/password-recovery
+- - POST 
+- - PATCH
 
-GET
-PUT (ADMIN)
-DELETE (ADMIN)
-/api/v1/users/me
+# Path de mi usuario a travez de mi aplicacion
 
-GET
-PUT
-PATCH
-DELETE
-/api/v1/auth/login
+registrar mi usuario
+loggear mi usuario
 
-POST
-/api/v1/auth/register
+### Usuarios sin sesion iniciada
 
-POST
-/api/v1/auth/password-recovery
+1. Ver los lugares
+2. Puede ver la informacion de un lugar
 
-POST
-PATCH
-Paths de mi usuario a traves de mi aplicacion
-[✅] registrar mi usuario [✅] loggear mi usuario
+### Guest
 
-Usuario sin sesion iniciada
-Ver los lugares
-puede ver la informacion de un lugar
+1. Ver los lugares
+2. Puede ver la informacion de un lugar
+3. reservar
+4. Cancelar su reservacion
+5. Dar un score una vez finalizada la reservacion 
+### Host 
 
-Guest
-Ver los lugares
-puede ver la informacion de un lugar
-Reservar
-Cancelar su reservacion
-Dar un score una vez finalizada la reservacion
+1. Ver los lugares
+2. Puede ver la informacion de un lugar
+3. reservar
+4. Dar un score una vez finalizada la reservacion 
+5. Crear lugares
+6. Cancelar Reservaciones en los lugares donde es host
+7. Puede ver perfiles de usuario
+8. Puede ver todos los lugares que le pertenecen
+9. Editar el lugar
+10. Eliminar el lugar
 
-Host
-Ver los lugares
-puede ver la informacion de un lugar
-reservar
-Dar un score una vez finalizada la reservacion
-Crear lugares
-Cancelar reservaciones en los lugares donde es host
-Puede ver perfiles de usuario
-Puede ver todos los lugares que le pertenecen
-editar el lugar
-Eliminar el lugar
+## Admin
 
-Admin
-Ver los lugares
-puede ver la informacion de un lugar
-reservar
-Dar un score una vez finalizada la reservacion
-Puede ver perfiles de usuario
-editar el lugar
-Eliminar el lugar
-Modificar roles
-Eliminar un usuario
-Modificar un usuario
-Ver lugares de los hosts
+1. Ver los lugares
+2. Puede ver la informacion de un lugar
+3. reservar
+4. Dar un score una vez ffinalizada la reservacion 
+5. Puede ver perfiles de usuario
+7. Editar el lugar
+8.  Modifcar roles
+9. Eliminar un usiario
+10. modificar un  usuario
+11. Ver lugares de lo hosts
 
-Accommodations
+### Places
+/api/v1/places
+
+/
+- GET
+- POST
+
+/:id
+- GETs
+- DELETE
+- PUT
+- PATCH
+
+## Accommodations
+
 /api/v1/accommodations
 
 /
+- GET
+- POST
 
-GET
-POST
 /:id
+- GET
+- DELETE
+- PUT
+- PATCH
 
-GET
-DELETE
-PUT
-PATCH
 /:id/available/?arrival=value&departure=value
+- GET 
 
-GET
-/api/v1/accommodations/:id/make-reservation
+/api/v1/accommodations/:id/make-reservations
+- POST
 
-POST
-
-{
-  "message": "Tus credenciales son correctas",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Y2Q2MDExLTdlNzYtNGQ2ZC1iMjViLTFkNmU0MTgyZWMyZiIsImVtYWlsIjoic2FoaWQua2lja0BhY2FkZW1sby5jb20iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTY2MzE4MjA3M30.FIycXK7GSle6ZsCVi0PNJLPUpxj8mFgN0tuhF-Yvs94"
-}
-
-
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Y2Q2MDExLTdlNzYtNGQ2ZC1iMjViLTFkNmU0MTgyZWMyZiIsImVtYWlsIjoic2FoaWQua2lja0BhY2FkZW1sby5jb20iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTY2MzE5Mjc2N30.008c41yLgQeCm3TYSythIZSFu9hHVxlf6JdSBgd8JTEeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Y2Q2MDExLTdlNzYtNGQ2ZC1iMjViLTFkNmU0MTgyZWMyZiIsImVtYWlsIjoic2FoaWQua2lja0BhY2FkZW1sby5jb20iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTY2MzE5Mjc2N30.008c41yLgQeCm3TYSythIZSFu9hHVxlf6JdSBgd8JTE
-
-
-
-
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0Y2Q2MDExLTdlNzYtNGQ2ZC1iMjViLTFkNmU0MTgyZWMyZiIsImVtYWlsIjoic2FoaWQua2lja0BhY2FkZW1sby5jb20iLCJyb2wiOiJhZG1pbiIsImlhdCI6MTY2MzE5Mjc2N30.008c41yLgQeCm3TYSythIZSFu9hHVxlf6JdSBgd8JTE
+# Ejemplo de documentacion
+https://petstore.swagger.io/v2/swagger.json
